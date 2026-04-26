@@ -2,42 +2,36 @@ package org.entdes;
 
 public class JocService {
 
-    public int jugar(int a, int b) {
-        int r = -1;
-        if (a >= 1 && a <= 3 && b >= 1 && b <= 3) {
-            if (a == b) {
-                r = 0;
-            } else {
-                if (a == 1 && b == 3) {
-                    r = 1;
-                } else if (a == 2 && b == 1) {
-                    r = 1;
-                } else if (a == 3 && b == 2) {
-                    r = 1;
-                } else {
-                    r = 2;
-                }
-            }
+    public int jugar(int eleccioJugador1, int eleccioJugador2) {
+        if (eleccioJugador1 < 1 || eleccioJugador1 > 3 || eleccioJugador2 < 1 || eleccioJugador2 > 3) {
+            return -1;
         }
-        return r;
+        if (eleccioJugador1 == eleccioJugador2) {
+            return 0;
+        }
+        if ((eleccioJugador1 == 1 && eleccioJugador2 == 3) ||
+            (eleccioJugador1 == 2 && eleccioJugador2 == 1) ||
+            (eleccioJugador1 == 3 && eleccioJugador2 == 2)) {
+            return 1;
+        }
+        return 2;
     }
 
-    public String getNomJugada(int j) {
-        String n = "";
-        if (j == 1) { n = "Pedra"; }
-        else if (j == 2) { n = "Paper"; }
-        else if (j == 3) { n = "Tisores"; }
-        else { n = "?"; }
-        return n;
+    public String getNomJugada(int valorJugada) {
+        switch (valorJugada) {
+            case 1: return "Pedra";
+            case 2: return "Paper";
+            case 3: return "Tisores";
+            default: return "?";
+        }
     }
 
-    public String getResultatText(int r) {
-        String txt = "";
-        if (r == 0) { txt = "EMPAT!"; }
-        else if (r == 1) { txt = "GUANYA JUGADOR 1!"; }
-        else if (r == 2) { txt = "GUANYA JUGADOR 2!"; }
-        else { txt = "Jugada no vàlida"; }
-        return txt;
+    public String getResultatText(int estatJoc) {
+        switch (estatJoc) {
+            case 0: return "EMPAT!";
+            case 1: return "GUANYA JUGADOR 1!";
+            case 2: return "GUANYA JUGADOR 2!";
+            default: return "Jugada no vàlida";
+        }
     }
-
 }

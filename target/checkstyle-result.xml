@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="/home/David_Staicu/Documents/EntornsDES/pt6_refactoring_enunciat_2526/src/main/java/org/entdes/JocService.java">
+<error line="5" column="5" severity="warning" message="Complexitat ciclomatica de 12 (maxim: 5). Simplifiqueu el metode." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+</file>
+</checkstyle>
